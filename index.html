@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lootava</title>
+<meta name="description" content="Lootava is a mobile game: build an underground shelter, gather survivors, send expeditions and fight fast Core Duels against players and bots.">
+<meta property="og:title" content="Lootava">
+<meta property="og:description" content="Build · Risk · Fight · Loot. Build your shelter, win the Core Duel.">
+<meta property="og:image" content="https://lootava.com/img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0d0c; --surface: #1a1614; --line: #2e2723;
+    --fg: #f3ebe4; --muted: #b3a79d; --accent: #ff8a2a; --accent-2: #ffc062;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  a { color: var(--accent-2); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+  /* Hero */
+  .hero {
+    position: relative; min-height: 88vh; display: flex; align-items: flex-end;
+    background: url("img/hero.jpg") center 35% / cover no-repeat;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15,13,12,.15) 0%, rgba(15,13,12,.35) 45%, var(--bg) 100%);
+  }
+  .hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; width: 100%; }
+  .logo { margin: 0 0 12px -1.5%; line-height: 0; }
+  .logo img { width: min(640px, 100%); height: auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,.65)); }
+  .tagline { font: 600 clamp(20px, 3.4vw, 30px)/1.25 "Chakra Petch", sans-serif; margin: 12px 0 8px; color: var(--accent-2); text-shadow: 0 2px 10px rgba(0,0,0,.7); }
+  .sub { max-width: 560px; color: #e9ddd2; margin: 0 0 24px; text-shadow: 0 2px 8px rgba(0,0,0,.8); }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px;
+    background: var(--accent); color: #1a0d03; font: 700 16px/1 "Chakra Petch", sans-serif; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #1a0d03; }
+  .platforms { margin-top: 12px; color: var(--muted); font-size: 14px; }
+
+  /* Features */
+  section { padding: 72px 0; }
+  h2 { font: 700 clamp(28px, 4vw, 40px)/1.15 "Chakra Petch", sans-serif; margin: 0 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 32px; max-width: 640px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+  .card .num { font: 700 14px/1 "Chakra Petch", sans-serif; color: var(--accent); letter-spacing: .1em; }
+  .card h3 { font: 700 22px/1.2 "Chakra Petch", sans-serif; margin: 10px 0 8px; }
+  .card p { margin: 0; color: var(--muted); }
+
+  /* Arenas */
+  .arenas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .arena { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--surface); }
+  .arena img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+  .arena:hover img { transform: scale(1.04); }
+  .arena span {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 12px 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,.75)); font: 600 15px/1 "Chakra Petch", sans-serif; letter-spacing: .04em;
+  }
+
+  /* Contact / footer */
+  .contact { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .contact .row { display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: center; }
+  footer { padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .row { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  footer nav a { margin-left: 18px; color: var(--muted); }
+  footer nav a:first-child { margin-left: 0; }
+
+  @media (max-width: 760px) {
+    .grid, .arenas { grid-template-columns: 1fr; }
+    .hero { min-height: 78vh; background-position: 40% 30%; }
+    section { padding: 52px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="logo"><img src="img/logo.webp" alt="Lootava — Build · Risk · Fight · Loot" width="1200" height="333"></h1>
+    <p class="sub">Dig an underground shelter, rescue survivors, send them on expeditions for loot — then step into the arena and blast the Core into your rival's reactor.</p>
+    <span class="badge"><span class="dot"></span>Closed beta coming soon</span>
+    <div class="platforms">Android (Google Play) · iOS later</div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>What is Lootava?</h2>
+      <p class="lead">A free-to-play mobile game that mixes shelter building with short, skill-based duels. Real money never buys power in the arena: the premium currency is only for cosmetics, the Season Pass and time skips.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Build your shelter</h3>
+          <p>Dig deeper, build rooms, and run your shelter with the survivors you find along the way.</p>
+        </article>
+        <article class="card">
+          <div class="num">02</div>
+          <h3>Send expeditions</h3>
+          <p>Send your crew into the wasteland for scrap, rare parts and blueprints — the longer the trip, the bigger the risk.</p>
+        </article>
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Win the Core Duel</h3>
+          <p>Fast 1v1 matches: shoot the Core into the enemy reactor. Play online, climb ten arenas and the world leaderboard.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Ten arenas to climb</h2>
+      <p class="lead">Win trophies to move from the Industrial Ruins all the way up to the Infernal Fortress.</p>
+      <div class="arenas">
+        <div class="arena"><img src="img/hero.jpg" alt="Industrial Ruins arena" loading="lazy"><span>Industrial Ruins</span></div>
+        <div class="arena"><img src="img/desert.jpg" alt="Desert Ruins arena" loading="lazy"><span>Desert Ruins</span></div>
+        <div class="arena"><img src="img/frozen.jpg" alt="Frozen Citadel arena" loading="lazy"><span>Frozen Citadel</span></div>
+        <div class="arena"><img src="img/molten.jpg" alt="Molten Citadel arena" loading="lazy"><span>Molten Citadel</span></div>
+        <div class="arena"><img src="img/sky.jpg" alt="Sky Temple Ruins arena" loading="lazy"><span>Sky Temple Ruins</span></div>
+        <div class="arena"><img src="img/celestial.jpg" alt="Celestial Ruins arena" loading="lazy"><span>Celestial Ruins</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap row">
+      <div>
+        <h2>Get in touch</h2>
+        <p class="lead" style="margin:0">Questions, feedback or want to join the beta? Email us at <a href="mailto:support@lootava.com">support@lootava.com</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 BDATLAS LLC · Lootava Games · Miami, Florida, USA</div>
+    <nav>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/privacy/#delete-account">Delete account</a>
+      <a href="mailto:support@lootava.com">Support</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
