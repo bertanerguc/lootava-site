@@ -65,7 +65,7 @@
     <p class="lead">Lootava is a mobile underground base builder powered by a 60-second, physics-based 1v1 PvP duel. Android and iOS, cross-platform online play, preparing for closed beta.</p>
     <div class="btns">
       <a class="btn primary" href="#teaser">Watch the teaser</a>
-      <a class="btn ghost" id="deck" href="Lootava_Pitch_Deck.pdf" hidden>Pitch deck (PDF)</a>
+      <a class="btn ghost" id="deck" href="../Lootava_Pitch_Deck.pdf" target="_blank" rel="noopener" hidden>Pitch deck (PDF)</a>
       <a class="btn ghost" href="mailto:bertan@lootava.com">Contact</a>
     </div>
   </div>
@@ -120,8 +120,8 @@
 </main>
 
 <script>
-  // Show the pitch deck button only when the PDF has been uploaded next to this page.
-  fetch('Lootava_Pitch_Deck.pdf', { method: 'HEAD' })
+  // Show the pitch deck button only when the PDF has been uploaded to the site root.
+  fetch('../Lootava_Pitch_Deck.pdf', { method: 'HEAD' })
     .then(function (r) { if (r.ok) document.getElementById('deck').hidden = false; })
     .catch(function () {});
 </script>
