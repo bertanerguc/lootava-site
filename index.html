@@ -117,6 +117,8 @@
   /* Online */
   .online { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cards.four { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 1000px) { .cards.four { grid-template-columns: repeat(2, 1fr); } }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
   .card .num { font: 700 13px/1 var(--display); color: var(--accent); letter-spacing: .14em; }
   .card h3 { margin-top: 10px; }
@@ -169,7 +171,7 @@
   }
   @media (max-width: 640px) {
     section { padding: 64px 0; }
-    .pu-grid, .cards, .arenas { grid-template-columns: 1fr; }
+    .pu-grid, .cards, .cards.four, .arenas { grid-template-columns: 1fr; }
     .hero { min-height: 82vh; align-items: flex-end; }
     .hero .wrap { padding-bottom: 48px; }
     .fighter.start span::after { display: none; }
@@ -185,6 +187,7 @@
     <a class="brand" href="#top"><img src="img/logo.webp" alt="Lootava" width="108" height="30"></a>
     <ul>
       <li><a href="#gameplay">Gameplay</a></li>
+      <li><a href="#raids">Vault Raids</a></li>
       <li><a href="#story">Story</a></li>
       <li><a href="#duel">Core Duel</a></li>
       <li><a href="#base">Base</a></li>
@@ -232,6 +235,22 @@
       <h2>See it in 50 seconds</h2>
       <p class="lead">Straight from the current build: Rex’s intro, the guided base, a Core Duel, a new survivor arriving and the daily rewards.</p>
       <div class="player"><video controls playsinline preload="none" poster="img/gameplay-poster.jpg"><source src="media/gameplay.mp4" type="video/mp4"></video></div>
+    </div>
+  </section>
+
+  <!-- Vault Raids -->
+  <section id="raids">
+    <div class="wrap">
+      <p class="eyebrow">New · Vault Raids · in development</p>
+      <h2>Sneak in. Dodge the traps. Crack the vault.</h2>
+      <p class="lead">Your mutant rat runs on its own. Tap to jump, tap again on a wall to bounce off it. Slip past saws, lasers and crushers to reach a rival’s vault, then pick the lock before your lockpicks run out.</p>
+      <div class="player"><video autoplay muted loop playsinline preload="metadata" poster="img/vault-raid-poster.jpg"><source src="media/vault-raid.mp4" type="video/mp4"></video></div>
+      <div class="cards four" style="margin-top:28px">
+        <article class="card"><div class="num">01</div><h3>One tap to play</h3><p>Timing is everything. Fall as often as you like, but every fall pays the defender.</p></article>
+        <article class="card"><div class="num">02</div><h3>Build your trap room</h3><p>100 vault levels. Earn new traps as your base and your duels grow, place them where you want, then beat your own room to make it live.</p></article>
+        <article class="card"><div class="num">03</div><h3>Pick the lock</h3><p>A clean lock gives up to 80% of the Scrap you see. Every miss breaks a lockpick and costs you loot.</p></article>
+        <article class="card"><div class="num">04</div><h3>Fair by design</h3><p>Traps and rooms are earned, never sold. Premium currency can’t be stolen.</p></article>
+      </div>
     </div>
   </section>
 
