@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Join the Lootava Beta</title>
+<title>LOOTAVA Android Closed Alpha – Join the Free Mobile Game Test</title>
 <link rel="canonical" href="https://lootava.com/beta/">
-<meta name="description" content="Sign up to test Lootava before launch: underground base building and fast 1v1 online Core Duels. Android first, iPhone soon.">
+<meta name="description" content="Join the LOOTAVA Android closed alpha. Build an underground shelter, compete in 60-second PvP Core Duels, and raid player-created vaults.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lootava.com/beta/">
-<meta property="og:title" content="Join the Lootava closed beta">
-<meta property="og:description" content="Build an underground shelter, rescue survivors and win fast 1v1 Core Duels. Sign up to test it first.">
+<meta property="og:title" content="LOOTAVA Android Closed Alpha – play it today">
+<meta property="og:description" content="Build an underground shelter, win 60-second PvP Core Duels and raid player-created vaults. Free Android test, join in 2 minutes.">
 <meta property="og:image" content="https://lootava.com/img/title.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f0d0c">
@@ -75,6 +75,23 @@
   footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
   footer a { color: var(--muted); margin-left: 16px; }
+  .steps { list-style: none; counter-reset: s; padding: 0; margin: 0 0 18px; display: grid; gap: 12px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 4px 12px; align-items: center;
+    background: #120f0d; border: 1px solid #3a322c; border-radius: 14px; padding: 14px; }
+  .steps li::before { content: counter(s); grid-row: span 2; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #1a0d03;
+    display: grid; place-items: center; font: 700 18px/1 var(--display); }
+  .steps .t { font-weight: 600; }
+  .steps .d { color: var(--muted); font-size: 14px; }
+  .steps a.go { grid-column: 2; justify-self: start; margin-top: 6px; display: inline-block; padding: 11px 18px; border-radius: 10px; background: var(--accent);
+    color: #1a0d03; text-decoration: none; font: 700 14px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+  .steps a.go:hover { background: #ff8c33; }
+  .note { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  details.later { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 22px; }
+  details.later summary { cursor: pointer; font: 700 18px/1.3 var(--display); list-style: none; }
+  details.later summary::-webkit-details-marker { display: none; }
+  details.later summary::after { content: " +"; color: var(--accent); }
+  details.later[open] summary::after { content: " –"; }
+  details.later form { margin-top: 18px; }
   @media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 32px; padding-top: 32px; } .card { padding: 24px; } }
 </style>
 </head>
@@ -89,25 +106,38 @@
 
 <main class="wrap grid">
   <section>
-    <p class="eyebrow">Closed beta</p>
-    <h1>Play Lootava <span>before everyone else</span></h1>
-    <p class="lead">Build an underground shelter, rescue survivors and win fast 1v1 Core Duels against real players. We're inviting our first testers now.</p>
+    <p class="eyebrow">Android closed alpha · free</p>
+    <h1>Play Lootava <span>today</span></h1>
+    <p class="lead">Build an underground shelter, rescue survivors, win 60-second 1v1 Core Duels against real players, and raid vaults other players built. Join the Android test in about 2 minutes, no waiting.</p>
     <div class="player">
       <video controls playsinline preload="none" poster="/img/gameplay-poster.jpg">
         <source src="/media/gameplay.mp4" type="video/mp4">
       </video>
     </div>
     <ul class="points">
-      <li><b>Free.</b> Beta shop items are free test items; no real money is ever charged.</li>
-      <li><b>Android first.</b> The iPhone beta (TestFlight) opens soon; sign up now and we'll invite you.</li>
+      <li><b>Free to play.</b> You don't need to buy anything to test. Money never buys a win in duels.</li>
+      <li><b>Android now, iPhone soon.</b> The iPhone test (TestFlight) is coming; leave your email in the iPhone section and we'll invite you.</li>
       <li><b>Your feedback shapes the game.</b> Tell us what's fun, what's confusing and what breaks.</li>
     </ul>
   </section>
 
   <section class="card" aria-live="polite">
+    <h2>Join the Android test</h2>
+    <p class="sub">Three quick steps. Use the <b>same Google account</b> that's signed in to the Play Store on your phone.</p>
+    <ol class="steps">
+      <li><span class="t">Join the tester group</span><span class="d">Google Groups · tap "Join group"</span>
+        <a class="go" data-step="group" href="https://groups.google.com/g/lootava-beta-testers" target="_blank" rel="noopener">Join group</a></li>
+      <li><span class="t">Become a tester</span><span class="d">Google Play · tap "Become a tester"</span>
+        <a class="go" data-step="optin" href="https://play.google.com/apps/testing/com.lootava.game" target="_blank" rel="noopener">Opt in</a></li>
+      <li><span class="t">Install Lootava</span><span class="d">Google Play · tap "Install"</span>
+        <a class="go" data-step="install" href="https://play.google.com/store/apps/details?id=com.lootava.game" target="_blank" rel="noopener">Get it on Google Play</a></li>
+    </ol>
+    <p class="note">If the Play page says the app isn't available yet, wait a few minutes after joining the group and try step 2 again. Stuck? Email <a href="mailto:support@lootava.com">support@lootava.com</a> or ask on <a href="https://discord.gg/HSj5ytP468" target="_blank" rel="noopener">Discord</a>.</p>
+
+    <details class="later" id="later">
+    <summary>iPhone, or want launch news?</summary>
     <form id="beta-form" novalidate>
-      <h2>Join the tester list</h2>
-      <p class="sub">Takes 30 seconds. We'll email you an invite and short instructions.</p>
+      <p class="sub">Leave your email: we'll invite you to the iPhone test (TestFlight) and tell you when Lootava launches.</p>
 
       <div class="field">
         <label class="f" for="email">Email</label>
@@ -118,8 +148,8 @@
       <div class="field">
         <span class="f" id="plat-label" style="display:block;font-weight:600;margin-bottom:6px">Your phone</span>
         <div class="seg" role="radiogroup" aria-labelledby="plat-label">
-          <input type="radio" id="p-android" name="platform" value="Android" checked><label for="p-android">Android</label>
-          <input type="radio" id="p-ios" name="platform" value="iPhone"><label for="p-ios">iPhone</label>
+          <input type="radio" id="p-android" name="platform" value="Android"><label for="p-android">Android</label>
+          <input type="radio" id="p-ios" name="platform" value="iPhone" checked><label for="p-ios">iPhone</label>
           <input type="radio" id="p-both" name="platform" value="Both"><label for="p-both">Both</label>
         </div>
       </div>
@@ -141,7 +171,7 @@
       </div>
 
       <label class="check"><input type="checkbox" id="consent" name="consent" value="yes" required>
-        <span>Email me beta invitations and testing instructions for Lootava. I've read the <a href="/privacy/#beta-signup" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+        <span>Email me test invitations and instructions for Lootava. I've read the <a href="/privacy/#beta-signup" target="_blank" rel="noopener">privacy policy</a>.</span></label>
       <label class="check"><input type="checkbox" id="news" name="news" value="yes">
         <span>Also tell me when Lootava launches (a few emails at most). <span style="color:var(--muted)">Optional</span></span></label>
 
@@ -151,15 +181,16 @@
       <button class="submit" type="submit" id="submit">Sign me up</button>
       <p class="msg" id="msg" role="status"></p>
     </form>
+    </details>
 
     <div class="done" id="done">
       <p class="eyebrow">You're on the list</p>
       <p class="big">Thanks for signing up!</p>
       <p style="color:var(--muted);margin:0">Here's what happens next:</p>
       <ol>
-        <li>We add your email to the tester list (usually within a day or two).</li>
-        <li>You get an email with a link to join the test on Google Play (or TestFlight for iPhone).</li>
-        <li>Open the link on your phone, tap <b>Become a tester</b>, then install Lootava.</li>
+        <li>iPhone: we email you a TestFlight invite as soon as the iPhone test opens.</li>
+        <li>Android: you don't need to wait, use the three steps above.</li>
+        <li>Launch news (if you ticked the box): a few emails at most.</li>
       </ol>
       <p style="color:var(--muted)">Want news first, or to find rivals for duels? Join the community:</p>
       <p><a class="btn-discord" href="https://discord.gg/HSj5ytP468" target="_blank" rel="noopener">
@@ -185,6 +216,9 @@
   const q = new URLSearchParams(location.search);
   document.getElementById("source").value =
     (q.get("src") || q.get("utm_source") || (document.referrer ? new URL(document.referrer).hostname : "direct")).slice(0, 60);
+
+  // iPhone / haber formu linkle açılabilsin: lootava.com/beta/#iphone
+  if (location.hash === "#iphone" || location.hash === "#news") document.getElementById("later").open = true;
 
   const form = document.getElementById("beta-form");
   const msg = document.getElementById("msg");
