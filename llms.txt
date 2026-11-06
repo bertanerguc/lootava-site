@@ -1,0 +1,17 @@
+# LOOTAVA
+
+> Lootava is a free 2D mobile game (Android closed alpha live, iPhone coming soon) by Lootava Games / BDATLAS LLC, Miami, FL. Players rebuild an underground shelter with Rex, rescue 12 survivors, fight 60-second 1v1 online Core Duels with power-ups, and raid trap-filled vaults built by real players. Free to play; the shop sells looks and time, never duel power.
+
+## Key facts
+- Platforms: Android (closed alpha, free, join instantly at https://lootava.com/beta/). iPhone (TestFlight) coming soon.
+- Core Duel: 60-second real-time 1v1 online match; both players shoot one Core into the rival's Reactor. Bullets only hit the Core. Power-ups: FREEZE, BIG CORE, SHIELD.
+- Vault Raids: one-tap platformer raids on player-built trap rooms; pick the lock to steal Scrap. You build your own vault and must beat it yourself before it goes live, so every vault is beatable. Revenge raids within 24 hours.
+- Base building: underground shelter, rooms, survivors with jobs, dig deeper for signals and new survivors.
+- Fair play: no pay-to-win; Cores (premium currency) cannot be stolen.
+- Rating: ESRB E10+. Developer contact: support@lootava.com. Community: https://discord.gg/HSj5ytP468
+
+## Pages
+- [Home](https://lootava.com/): game overview, gameplay video, characters, arenas, FAQ
+- [Join the Android test](https://lootava.com/beta/): three steps, no invite needed
+- [Privacy Policy](https://lootava.com/privacy/)
+- [Terms of Service](https://lootava.com/terms/)
