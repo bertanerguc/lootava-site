@@ -52,6 +52,15 @@
     .shots { grid-template-columns: 1fr; }
     header { padding-top: 32px; }
   }
+  .status { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .status span { font: 600 13px/1 "Chakra Petch", sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--fg);
+                 background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; }
+  .status span b { color: var(--accent); font-weight: 700; }
+  .dl { margin-top: 10px; font-size: 14px; color: var(--muted); }
+  .new { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 24px; }
+  .new li { padding-left: 18px; border-left: 3px solid var(--accent); color: var(--muted); font-size: 15px; }
+  .new li b { color: var(--fg); }
+  @media (max-width: 760px) { .new { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -62,9 +71,16 @@
       <span class="tag">Partner kit · Confidential</span>
     </div>
     <h1>Dig deep. Rescue survivors. Win the Core.</h1>
-    <p class="lead">A feature-rich, cross-platform mobile game approaching closed beta, with 12 playable and tested characters, real-time PvP, synchronized power-ups, persistent base-building, guided onboarding, and integrated progression and shop systems.</p>
+    <p class="lead">A cross-platform mobile game in closed beta on Android and iPhone: 60-second 1v1 online Core Duels with 12 fighters and their own SURGE super powers, online Vault Raids against real players, and an underground base players keep for months.</p>
+    <div class="status">
+      <span>Build <b>0.3.5</b></span>
+      <span>Google Play <b>closed testing</b></span>
+      <span>iPhone <b>TestFlight</b></span>
+      <span>Online duels + raids <b>live</b></span>
+      <span>Built <b>solo</b></span>
+    </div>
     <div class="btns">
-      <a class="btn primary" href="#gameplay">Watch gameplay</a>
+      <a class="btn primary" href="#surge">Watch gameplay</a>
       <a class="btn ghost" id="deck" href="../Lootava_Pitch_Deck.pdf" target="_blank" rel="noopener" hidden>Pitch deck (PDF)</a>
       <a class="btn ghost" href="mailto:bertan@lootava.com">Contact</a>
       <a class="btn ghost" href="https://discord.gg/HSj5ytP468" target="_blank" rel="noopener">Discord</a>
@@ -73,25 +89,50 @@
 </header>
 
 <main class="wrap">
-  <section id="gameplay">
-    <h2>Gameplay in 50 seconds</h2>
-    <p class="sub">Captured from the current build (v0.2.0): Rex’s story intro, the guided base, a Core Duel, a new survivor arriving and the daily rewards.</p>
-    <video controls playsinline preload="metadata" poster="media/gameplay-poster.jpg">
-      <source src="media/lootava-gameplay.mp4" type="video/mp4">
+  <section id="surge">
+    <h2>New: SURGE super powers</h2>
+    <p class="sub">Every fighter has a power of their own. The meter fills during the match and faster on every hit on the Core; one tap turns the duel around for a few seconds. Twelve powers, synced online between Android and iPhone. Captured from build 0.3.5.</p>
+    <video controls playsinline preload="metadata" poster="media/surge-poster.jpg">
+      <source src="media/lootava-surge.mp4" type="video/mp4">
     </video>
+    <p class="dl">For social media: <a href="media/lootava-surge-vertical.mp4" download>vertical 9:16 cut (MP4)</a></p>
   </section>
 
   <section id="raids">
-    <h2>New: Vault Raids (in development)</h2>
-    <p class="sub">A one-tap timing platformer inside Lootava. A mutant rat dodges saws, lasers and crushers to reach a rival’s vault, then picks the lock. Players build their own trap rooms across 100 vault levels. Captured from a development build.</p>
-    <video controls playsinline preload="metadata" poster="media/vault-raid-poster.jpg">
-      <source src="media/lootava-vault-raids.mp4" type="video/mp4">
+    <h2>Vault Raids: online against real players</h2>
+    <p class="sub">A one-tap timing platformer inside Lootava. A mutant rat dodges saws, lasers and crushers to reach another player’s vault, then picks the lock. Every raid is replayed and checked on the server before Scrap changes hands. Players build their own trap rooms across 100 vault levels. Captured from build 0.3.5.</p>
+    <video controls playsinline preload="metadata" poster="media/raids-poster.jpg">
+      <source src="media/lootava-raids-2.mp4" type="video/mp4">
+    </video>
+    <p class="dl">For social media: <a href="media/lootava-raids-vertical.mp4" download>vertical 9:16 cut (MP4)</a></p>
+  </section>
+
+  <section>
+    <h2>What’s new since build 0.2.0</h2>
+    <p class="sub">All in the current beta build.</p>
+    <ul class="new">
+      <li><b>SURGE:</b> 12 character super powers with their own art and effects, host-authoritative online sync.</li>
+      <li><b>Fighter cards:</b> Common, Rare and Epic rarity, levels 1 to 5, XP from base work, expeditions and duels.</li>
+      <li><b>Online Vault Raids:</b> real rival vaults, server-side replay check, 6-hour shields, Intruders list and 24-hour revenge.</li>
+      <li><b>Raid progression:</b> 1–3 stars per raid, a star chest, 100 vault levels with new traps as you grow.</li>
+      <li><b>Trophy Road:</b> 10 arenas with rewards every 50 trophies, server-checked Cores, world leaderboard.</li>
+      <li><b>Deeper base:</b> timed room upgrades with builders, radio signals that lead to new survivors over hours.</li>
+      <li><b>iPhone:</b> cloud-built iOS releases on TestFlight; Android and iPhone in the same matches.</li>
+      <li><b>Revenue plumbing:</b> rewarded ads (Unity LevelPlay) and in-app purchases integrated, Cores economy validated on the server.</li>
+    </ul>
+  </section>
+
+  <section id="gameplay">
+    <h2>Gameplay in 50 seconds</h2>
+    <p class="sub">From an earlier build (0.2.0): Rex’s story intro, the guided base, a Core Duel, a new survivor arriving and the daily rewards.</p>
+    <video controls playsinline preload="none" poster="media/gameplay-poster.jpg">
+      <source src="media/lootava-gameplay.mp4" type="video/mp4">
     </video>
   </section>
 
   <section>
     <h2>A new player’s first three minutes</h2>
-    <p class="sub">Unedited: the intro cinematic, title screen, Rex’s step-by-step base guide, the tutorial duel, and the first return to the base.</p>
+    <p class="sub">Unedited, from an earlier build: the intro cinematic, title screen, Rex’s step-by-step base guide, the tutorial duel, and the first return to the base.</p>
     <video controls playsinline preload="none" poster="media/session-poster.jpg">
       <source src="media/lootava-first-session.mp4" type="video/mp4">
     </video>
@@ -100,33 +141,37 @@
   <section>
     <h2>Meet the fighters</h2>
     <p class="sub">Every survivor gets a cinematic reveal when the player rescues them.</p>
-    <video controls playsinline preload="metadata" poster="media/fighters-poster.jpg">
+    <video controls playsinline preload="none" poster="media/fighters-poster.jpg">
       <source src="media/lootava-fighters.mp4" type="video/mp4">
     </video>
   </section>
 
   <section>
     <h2>At a glance</h2>
-    <p class="sub">Two games in one loop: short matches and a home players keep for months.</p>
+    <p class="sub">Three loops that feed each other: fast duels, raids on real players, and a home players keep for months.</p>
     <div class="grid">
-      <div class="card"><b>Core Duel + power-ups</b><p>1v1, 60 seconds; a tie goes to LAST CHANCE, where the next strike wins. Shoot a glowing Core into the rival’s Reactor. Freeze, Big Core and Shield drop in every match; shoot the box to win them. No health, no damage.</p></div>
-      <div class="card blue"><b>Underground base, guided by Rex</b><p>A story intro, then Rex shows new players the base step by step. Dig floor by floor, run rooms, send expeditions, rescue survivors.</p></div>
-      <div class="card"><b>12 playable fighters</b><p>All 12 survivors implemented and tested, plus 3 Guardians and The Warden as bosses. More every season.</p></div>
-      <div class="card blue"><b>Cross-platform PvP</b><p>Android vs iPhone online, quick match and room codes, built on Photon Fusion 2.</p></div>
-      <div class="card"><b>Fair monetization</b><p>Outfits and Core trails with daily featured picks, Season Pass, time skips, opt-in ads. Money never buys victory.</p></div>
-      <div class="card blue"><b>Live-ops ready</b><p>Accounts and cloud save, leaderboard, shop, seasons, daily gifts, analytics.</p></div>
+      <div class="card"><b>Core Duel + SURGE</b><p>1v1, 60 seconds; a tie goes to LAST CHANCE. Shoot a glowing Core into the rival’s Reactor. Power-up boxes and each fighter’s SURGE in every match. No health, no damage.</p></div>
+      <div class="card blue"><b>Vault Raids</b><p>One-tap platformer raids on vaults built by real players, checked on the server. Build and test your own trap room; every fall in it pays you.</p></div>
+      <div class="card"><b>Underground base</b><p>Story intro, then Rex guides new players step by step. Dig floor by floor, upgrade rooms with builders, send expeditions, follow signals to new survivors.</p></div>
+      <div class="card blue"><b>12 fighters, 4 bosses</b><p>All 12 survivors playable, each with a SURGE power, a card with rarity and levels, and a cinematic reveal. 3 Guardians and The Warden as bosses.</p></div>
+      <div class="card"><b>Monetization</b><p>Free to play, one premium currency (Cores): time skips, lockpick refills, fighter XP boosts, Season Pass, opt-in rewarded ads. Weapons and power-up boxes are equal for everyone.</p></div>
+      <div class="card blue"><b>Live-ops ready</b><p>Accounts and cloud save, server-side economy (Unity Cloud Code), world leaderboard, Trophy Road, seasons, daily quests, reminder notifications, analytics.</p></div>
     </div>
   </section>
 
   <section>
     <h2>Screenshots</h2>
-    <p class="sub">All from the current build.</p>
+    <p class="sub">The first six are from build 0.3.5; the rest from earlier builds.</p>
     <div class="shots">
-      <figure><img src="media/shot-strike.jpg" alt="Core Duel with the CORE STRIKE banner" loading="lazy"><figcaption>Core Duel: CORE STRIKE</figcaption></figure>
+      <figure><img src="media/shot-surge.jpg" alt="Atlas uses his Soul Skulls SURGE in a Core Duel" loading="lazy"><figcaption>SURGE: Atlas’s Soul Skulls</figcaption></figure>
+      <figure><img src="media/shot-surge-strike.jpg" alt="CORE STRIKE banner while blue skulls circle Atlas" loading="lazy"><figcaption>CORE STRIKE with SURGE active</figcaption></figure>
+      <figure><img src="media/shot-raid-run.jpg" alt="The rat runs through the Saw Mill raid room" loading="lazy"><figcaption>Vault Raid: Saw Mill</figcaption></figure>
+      <figure><img src="media/shot-raid-stars.jpg" alt="Vault cracked with three stars" loading="lazy"><figcaption>Vault cracked, 3 stars</figcaption></figure>
+      <figure><img src="media/shot-raids-page.jpg" alt="RAIDS page with My Vault and Find Vault" loading="lazy"><figcaption>RAIDS: my vault and a rival’s</figcaption></figure>
+      <figure><img src="media/shot-practice.jpg" alt="Practice list of bandit rooms with stars" loading="lazy"><figcaption>Practice rooms</figcaption></figure>
       <figure><img src="media/shot-guide.jpg" alt="Rex guiding the player through the base" loading="lazy"><figcaption>Rex’s guided base</figcaption></figure>
       <figure><img src="media/shot-room-farm.jpg" alt="Farm room with a survivor at work" loading="lazy"><figcaption>Inside a room</figcaption></figure>
       <figure><img src="media/shot-arrival.jpg" alt="Scar’s cinematic arrival" loading="lazy"><figcaption>A new survivor arrives</figcaption></figure>
-      <figure><img src="media/shot-daily.jpg" alt="Daily rewards calendar" loading="lazy"><figcaption>Daily rewards</figcaption></figure>
       <figure><img src="media/shot-title.jpg" alt="Title screen with Rex next to the hatch" loading="lazy"><figcaption>Title screen</figcaption></figure>
     </div>
   </section>
@@ -134,7 +179,7 @@
   <div class="contact">
     <p><strong>Bertan Erguc</strong> · Founder, Lootava Games (BDATLAS LLC)<br>
     <a href="mailto:bertan@lootava.com">bertan@lootava.com</a> · <a href="https://lootava.com">lootava.com</a> · <a href="https://discord.gg/HSj5ytP468" target="_blank" rel="noopener">Discord community</a></p>
-    <p class="note">This page is shared privately with prospective partners. Please do not redistribute. Footage is from the work-in-progress build v0.2.0.</p>
+    <p class="note">This page is shared privately with prospective partners. Please do not redistribute. New footage is from beta build 0.3.5 (November 2026); older clips are marked.</p>
   </div>
 </main>
 
